@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Webpage Title</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="styles.css">
     <script src="index.js" defer></script>
     
@@ -16,12 +16,88 @@
         <a href="/about-me.html">About me</a>
     </div>
  <!-- Hamburger Menu (initially hidden) -->
- 
+ <style>
+    .container {
+        display: flex;
+    }
+    .profile {
+        width: 250px;
+        background-color: rgb(206, 206, 206);
+        margin: 5px;
+        height: 100vh; /* Adjust the height as needed */
+        border-radius: 15px;
+        padding: 20px; /* Add some padding for spacing */
+        box-sizing: border-box; /* Include padding in the width */
+    }
+    .blog-posts {
+        flex: 1; /* Take up the remaining space */
+        background-color: white; /* Change the background color for the blog posts */
+        padding: 20px; /* Add padding for spacing */
+        box-sizing: border-box; /* Include padding in the width */
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    .profile.one{
+        margin-left: -300px;
+        display: flex;
+    }
+    .profile.none{
+        background-color: white;
+        width: 70px;
+    }
+
+    .username{
+        color: rgb(87, 13, 13);
+        margin-top: 4px;
+        margin-left: 20px;
+    }
+    .blog.date {
+        display: flex;
+        justify-content: flex-end; /* Push the text to the end of the box (to the right) */
+        align-items: center; /* Center text vertically within the box */
+        padding: 10px; /* Add padding for spacing */
+        margin: 35px 0; /* Adjust margin as needed */
+        margin-right: 30px;
+    }
+
+    .blog.post{
+            background-color: rgb(209, 206, 206);
+            margin: 10px;
+            height: 230px;
+            width: 800px;
+            margin-left: 50px;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            box-shadow: 30px 40px 60px rgba(0, 0, 0, 0.1); /* Modern box shadow */
+
+    }
+ </style>
+
  <div class="hamburger-menu">
   <img src="hamburger-menu.png" class="img">
 </div>
 
-    <div class="hero">
+    <div class="container">
+        <div class="profile">
+            <img src="/img/suitz.jpg" width="100" height="100" style="border-radius: 15px; border: 1px solid black; margin: 10px 15px;">
+                 <p class="username">@rafael<p>                 
+        </div>
+        <div class="blog-posts">
+            <div class="blog date">            <h1>October 26th, 2023</h1>
+            </div>
+            <div class="blog post">  <h1>Supercharging Real-Time Web Applications with SignalR in ASP.NET Core</h1>
+                <p> In today's fast-paced digital world, real-time web applications have become the cornerstone of modern web development. Explore how SignalR, a powerful library in ASP.NET Core, empowers developers to build interactive and responsive web applications that can push updates to clients in real-time. From chat applications to live sports scores, SignalR is a game-changer in the world of frontend technology, enabling you to create dynamic and engaging user experiences like never before. <a href="#">Read more</a></p>
+            </div>
+            <div class="blog post">            <h1>Harnessing the Power of Blazor: Building Interactive Web Apps with C# and .NET</h1>
+                <p>Blazor, the innovative web framework by Microsoft, allows you to build web applications using C# and .NET, opening up a world of possibilities for frontend developers. In this article, we'll delve into the realm of Blazor and its components, exploring how this frontend technology can streamline your development process. We'll discover how you can create rich, interactive web apps with C# while maintaining the robustness of .NET. Whether you're a seasoned .NET developer or new to frontend tech, Blazor offers a fresh perspective on web development that's both exciting and efficient. <a href="#"> Read more</a></p>
+            </div>
+        </div>
+    </div>
+
+        
         
     </div>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
