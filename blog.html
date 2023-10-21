@@ -97,7 +97,7 @@
                  <p class="username">@rafael<p>                 
         </div>
         <div class="blog-posts">
-            <div class="blog date">            <h1>October 26th, 2023</h1>
+            <div class="blog date">            <h1 id="currentDate">October 26th, 2023</h1>
             </div>
             <div class="blog post">  <h1>Supercharging Real-Time Web Applications with SignalR in ASP.NET Core</h1>
                 <p> In today's fast-paced digital world, real-time web applications have become the cornerstone of modern web development. Explore how SignalR, a powerful library in ASP.NET Core, empowers developers to build interactive and responsive web applications that can push updates to clients in real-time. From chat applications to live sports scores, SignalR is a game-changer in the world of frontend technology, enabling  <a href="#">Read more</a></p>
@@ -110,7 +110,29 @@
         </div>
     </div>
 
+        <script>
+            // Create a Date object
+        const currentDate = new Date();
+
+        // Create an array of month names
+        const monthNames = [
+            "January", "February", "March", "April", "May", "June", "July",
+            "August", "September", "October", "November", "December"
+        ];
         
+        // Get the day, month, and year
+        const day = currentDate.getDate();
+        const monthIndex = currentDate.getMonth(); // Months are 0-based, so add 1
+        const year = currentDate.getFullYear();
+
+        // Get the month name from the array
+        const monthName = monthNames[monthIndex];
+        // Format the date as "dd/mm/yyyy" or "mm/dd/yyyy" depending on your preference
+        const formattedDate = `${monthName} ${day}, ${year}`;
+
+        // Display the formatted date in an HTML element
+        document.getElementById("currentDate").textContent = `${formattedDate}`;
+        </script>
         
     </div>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
