@@ -229,7 +229,9 @@ span.autotype{
      display: flex;
      align-items: center;
    }
-   
+   body{
+    overflow: scroll;
+   }
    /* You can remove this rule, as it's already set in the .hero selector above */
    /* div.hero {
      display: flex;
