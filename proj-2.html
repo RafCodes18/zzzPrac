@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>State Income Tax Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+
+ body{
+  display: flex;
+  flex-direction:column ;
+ }
+ .cont{
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 800px;
+  height: 500px;
+  justify-self: center;
+ background-color: #a1f5f5;
+ border-radius: 40px;
+ padding: 40px;
+ }
+
+ #calculator{
+  margin-top: 60px;
+ }
+</style>
+<body>
+ <div class="navbar">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html">Blog</a>
+  <a href="mailto:rafaelparradev@gmail.com">Contact</a>
+  <a href="/about-me.html">About me</a>
+</div>
+<!-- Hamburger Menu (initially hidden) -->
+
+<div class="hamburger-menu">
+<img src="hamburger-menu.png" class="img">
+</div>
+
+<div class="cont">
+    <h1>State Income Tax Calculator</h1>
+    <div id="calculator">
+        <label for="income">Income: $</label>
+        <input type="number" id="income" placeholder="Enter your income">
+        
+        <label for="state">Select your state:</label>
+        <select id="state">
+         <option value="alabama">Alabama</option>
+         <option value="alaska">Alaska</option>
+         <option value="arizona">Arizona</option>
+         <option value="arkansas">Arkansas</option>
+         <option value="california">California</option>
+         <option value="colorado">Colorado</option>
+         <option value="connecticut">Connecticut</option>
+         <option value="delaware">Delaware</option>
+         <option value="florida">Florida</option>
+         <option value="georgia">Georgia</option>
+         <option value="hawaii">Hawaii</option>
+         <option value="idaho">Idaho</option>
+         <option value="illinois">Illinois</option>
+         <option value="indiana">Indiana</option>
+         <option value="iowa">Iowa</option>
+         <option value="kansas">Kansas</option>
+         <option value="kentucky">Kentucky</option>
+         <option value="louisiana">Louisiana</option>
+         <option value="maine">Maine</option>
+         <option value="maryland">Maryland</option>
+         <option value="massachusetts">Massachusetts</option>
+         <option value="michigan">Michigan</option>
+         <option value="minnesota">Minnesota</option>
+         <option value="mississippi">Mississippi</option>
+         <option value="missouri">Missouri</option>
+         <option value="montana">Montana</option>
+         <option value="nebraska">Nebraska</option>
+         <option value="nevada">Nevada</option>
+         <option value="newhampshire">New Hampshire</option>
+         <option value="newjersey">New Jersey</option>
+         <option value="newmexico">New Mexico</option>
+         <option value="newyork">New York</option>
+         <option value="northcarolina">North Carolina</option>
+         <option value="northdakota">North Dakota</option>
+         <option value="ohio">Ohio</option>
+         <option value="oklahoma">Oklahoma</option>
+         <option value="oregon">Oregon</option>
+         <option value="pennsylvania">Pennsylvania</option>
+         <option value="rhodeisland">Rhode Island</option>
+         <option value="southcarolina">South Carolina</option>
+         <option value="southdakota">South Dakota</option>
+         <option value="tennessee">Tennessee</option>
+         <option value="texas">Texas</option>
+         <option value="utah">Utah</option>
+         <option value="vermont">Vermont</option>
+         <option value="virginia">Virginia</option>
+         <option value="washington">Washington</option>
+         <option value="westvirginia">West Virginia</option>
+         <option value="wisconsin">Wisconsin</option>
+         <option value="wyoming">Wyoming</option>option>
+            <!-- Add more state options here -->
+        </select>
+        
+        <button onclick="calculateTax()">Calculate Tax</button>
+        
+        <div id="result">
+            <p>Your estimated state tax is: $<span id="taxAmount">0</span></p>
+        </div>
+    </div>
+   </div>
+    <script>
+     function calculateTax() {
+      const income = parseFloat(document.getElementById("income").value);
+      const state = document.getElementById("state").value;
+      
+      // Define tax rates for different states (you can replace these with real values)   
+       const taxRates = {
+        alabama: 0.05,
+        alaska: 0.00,
+        arizona: 0.045,
+        arkansas: 0.055,
+        california: 0.09,
+        colorado: 0.0463,
+        connecticut: 0.0699,
+        delaware: 0.066,
+        florida: 0.00,
+        georgia: 0.06,
+        hawaii: 0.0825,
+        idaho: 0.065,
+        illinois: 0.0495,
+        indiana: 0.0323,
+        iowa: 0.08,
+        kansas: 0.0535,
+        kentucky: 0.05,
+        louisiana: 0.04,
+        maine: 0.07,
+        maryland: 0.0525,
+        massachusetts: 0.051,
+        michigan: 0.0425,
+        minnesota: 0.0725,
+        mississippi: 0.04,
+        missouri: 0.06,
+        montana: 0.069,
+        nebraska: 0.0684,
+        nevada: 0.00,
+        newhampshire: 0.00,
+        newjersey: 0.08,
+        newmexico: 0.049,
+        newyork: 0.0685,
+        northcarolina: 0.0525,
+        northdakota: 0.02,
+        ohio: 0.0499,
+        oklahoma: 0.05,
+        oregon: 0.099,
+        pennsylvania: 0.0307,
+        rhodeisland: 0.0464,
+        southcarolina: 0.07,
+        southdakota: 0.00,
+        tennessee: 0.01,
+        texas: 0.00,
+        utah: 0.0495,
+        vermont: 0.058,
+        virginia: 0.0575,
+        washington: 0.00,
+        westvirginia: 0.05,
+        wisconsin: 0.0584,
+        wyoming: 0.00
+      };
+      
+      // Calculate tax
+      const taxRate = taxRates[state] || 0;
+      const taxAmount = income * taxRate;
+      
+      // Display the calculated tax
+      document.getElementById("taxAmount").textContent = taxAmount.toFixed(2);
+  }
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
